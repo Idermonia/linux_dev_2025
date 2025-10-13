@@ -1,0 +1,40 @@
+@@@=== Element #28 ===
+@@@start = -100
+@@@end = 100
+@@@step = 3
+@@@current i = -19
+@@@=== Element #29 ===
+@@@start = -100
+@@@end = 100
+@@@step = 3
+@@@current i = -16
+@@@=== Element #30 ===
+@@@start = -100
+@@@end = 100
+@@@step = 3
+@@@current i = -13
+@@@=== Element #31 ===
+@@@start = -100
+@@@end = 100
+@@@step = 3
+@@@current i = -10
+@@@=== Element #32 ===
+@@@start = -100
+@@@end = 100
+@@@step = 3
+@@@current i = -7
+@@@=== Element #33 ===
+@@@start = -100
+@@@end = 100
+@@@step = 3
+@@@current i = -4
+@@@=== Element #34 ===
+@@@start = -100
+@@@end = 100
+@@@step = 3
+@@@current i = -1
+@@@=== Element #35 ===
+@@@start = -100
+@@@end = 100
+@@@step = 3
+@@@current i = 2
