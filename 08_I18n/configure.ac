@@ -1,0 +1,9 @@
+AC_PREREQ([2.69])
+AC_INIT([guess], [1.0])
+AM_INIT_AUTOMAKE([foreign])
+AC_PROG_CC
+
+AC_CONFIG_SRCDIR([guess.c])
+AC_CONFIG_HEADERS([config.h])
+AC_CONFIG_FILES([Makefile])
+AC_OUTPUT
