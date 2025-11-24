@@ -1,0 +1,35 @@
+--- maze.c	2025-11-24 21:48:36.454761327 +0300
++++ maze_001.c	2025-11-24 22:17:05.774813983 +0300
+@@ -2,7 +2,7 @@
+ #include <stdlib.h>
+ #include <time.h>
+ 
+-int SIZE = 6;
++int SIZE;
+ int DIM;
+ 
+ char **maze;
+@@ -10,7 +10,8 @@
+ int **need_host;
+ int directions[4][2] = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+ 
+-void init_maze() {
++void init_maze(int size) {
++    SIZE = size;
+     DIM = SIZE * 2 + 1;
+     
+     maze = malloc(DIM * sizeof(char*));
+@@ -127,8 +128,11 @@
+     }
+ }
+ 
+-int main() {
+-    init_maze();
++int main(int argc, char *argv[]) {
++    int size = 6;
++    if (argc > 1) size = atoi(argv[1]);
++    
++    init_maze(size);
+     generate_maze();
+     print_maze();
+     free_maze();

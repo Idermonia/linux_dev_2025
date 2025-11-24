@@ -1,0 +1,47 @@
+--- maze_001.c	2025-11-24 22:17:41.474663572 +0300
++++ maze_002.c	2025-11-24 22:16:13.519032912 +0300
+@@ -9,6 +9,8 @@
+ int **can_host;
+ int **need_host;
+ int directions[4][2] = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
++char wall_char = '#';
++char path_char = '.';
+ 
+ void init_maze(int size) {
+     SIZE = size;
+@@ -27,7 +29,7 @@
+     
+     for (int i = 0; i < DIM; i++)
+         for (int j = 0; j < DIM; j++)
+-            maze[i][j] = (i%2==0 || j%2==0) ? '#' : '.';
++            maze[i][j] = (i%2==0 || j%2==0) ? wall_char : path_char;
+     
+     for (int i = 0; i < SIZE; i++)
+         for (int j = 0; j < SIZE; j++) {
+@@ -116,7 +118,7 @@
+             wall_x = (host_x < selected_x) ? (host_x * 2 + 2) : (selected_x * 2 + 2);
+         }
+ 
+-        maze[wall_x][wall_y] = '.';
++        maze[wall_x][wall_y] = path_char;
+     }
+ }
+ 
+@@ -130,7 +132,16 @@
+ 
+ int main(int argc, char *argv[]) {
+     int size = 6;
+-    if (argc > 1) size = atoi(argv[1]);
++    
++    if (argc > 1) {
++        wall_char = argv[1][0];
++        path_char = argv[1][1];
++    }
++    if (argc > 2) {
++        size = atoi(argv[2]);
++        if (size < 3) size = 3;
++        if (size > 20) size = 20;
++    }
+     
+     init_maze(size);
+     generate_maze();

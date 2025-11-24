@@ -1,0 +1,43 @@
+--- maze_002.c	2025-11-24 22:18:58.350337622 +0300
++++ maze_003.c	2025-11-24 22:13:04.767809086 +0300
+@@ -50,8 +50,8 @@
+     free(need_host);
+ }
+ 
+-void generate_maze() {
+-    srand(time(NULL));
++void generate_maze(unsigned int seed) {
++    srand(seed);
+     
+     int x = rand() % SIZE;
+     int y = rand() % SIZE;
+@@ -131,20 +131,19 @@
+ }
+ 
+ int main(int argc, char *argv[]) {
++    unsigned int seed = time(NULL);
++    char *chars = "#.";
+     int size = 6;
+     
+-    if (argc > 1) {
+-        wall_char = argv[1][0];
+-        path_char = argv[1][1];
+-    }
+-    if (argc > 2) {
+-        size = atoi(argv[2]);
+-        if (size < 3) size = 3;
+-        if (size > 20) size = 20;
+-    }
++    if (argc > 1) seed = atoi(argv[1]);
++    if (argc > 2) chars = argv[2];
++    if (argc > 3) size = atoi(argv[3]);
++    
++    wall_char = chars[0];
++    path_char = chars[1];
+     
+     init_maze(size);
+-    generate_maze();
++    generate_maze(seed);
+     print_maze();
+     free_maze();
+     return 0;
