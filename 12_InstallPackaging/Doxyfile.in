@@ -1,0 +1,43 @@
+PROJECT_NAME           = "@PACKAGE_TARNAME@"
+PROJECT_NUMBER         = @PACKAGE_VERSION@
+PROJECT_BRIEF          = "@PACKAGE_NAME@"
+OUTPUT_DIRECTORY       = @DX_DOCDIR@
+OUTPUT_LANGUAGE        = English
+
+INPUT                  = @top_srcdir@/src
+FILE_PATTERNS          = *.c *.h *.cpp *.hpp
+RECURSIVE              = YES
+EXTRACT_ALL            = YES
+
+JAVADOC_AUTOBRIEF      = YES
+OPTIMIZE_OUTPUT_FOR_C  = YES
+MARKDOWN_SUPPORT       = YES
+TAB_SIZE               = 4
+ENABLE_PREPROCESSING   = YES
+
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+HTML_FILE_EXTENSION    = .html
+HTML_DYNAMIC_MENUS     = YES
+SEARCHENGINE           = YES
+DISABLE_INDEX          = NO
+GENERATE_TREEVIEW      = NO
+
+GENERATE_LATEX         = NO
+
+
+GENERATE_MAN           = YES
+MAN_OUTPUT             = man
+MAN_EXTENSION          = .1
+
+HAVE_DOT               = YES
+CLASS_DIAGRAMS         = YES
+CLASS_GRAPH            = YES
+COLLABORATION_GRAPH    = YES
+INCLUDE_GRAPH          = YES
+INCLUDED_BY_GRAPH      = YES
+DOT_IMAGE_FORMAT       = png
+
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
